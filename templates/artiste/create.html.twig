@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Nouvel Artiste' %}
+
+
+{% block body %}
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-9 col-xxl-12">
+                    <div class="row">
+
+                        <div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12">
+
+                            {{ include('_form.html.twig')}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

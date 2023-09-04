@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artiste{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <table>
+
+        <thead>
+        <tr>
+            <th><strong>Nom de l'artiste</strong></th>
+            <th><strong>Actions</strong></th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for artiste in artistes %}
+            <tr>
+                <td><b><a href="{{ path('app_artiste_show',{id:artiste.id})}}">{{  artiste.name | capitalize}}</a></b></td>
+                <td><b><a href="{{ path('app_festival_show',{id:artiste.id})}}">Modifier</a></b></td>
+                <td><b><a href="{{ path('app_festival_show',{id:artiste.id})}}">Supprimer</a></b></td>
+
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}

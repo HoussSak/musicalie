@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+                <div class="p-3">
+                    <h1 class="h5  text-secondary">
+                        {{ festival.name }}
+                    </h1>
+                    <p> Département organisateur : {{ festival.departement.name }}</p>
+                    <p> Date du festival :  {{ festival.date |date('Y-m-d')  }}</p>
+                    {% for artiste in festival.artiste %}
+                        <div>
+                            <article>
+                                <div>
+                                    <p>
+                                        Artiste : <a href="">
+                                            {{ artiste.name }}
+                                        </a>
+                                    </p>
+
+                                    <p>Style de music: {{ artiste.style }}</p>
+                                </div>
+                            </article>
+
+                        </div>
+                    {% endfor %}
+
+
+
+        </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}
+    {{ festival.name }}
+{% endblock %}
+

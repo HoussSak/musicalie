@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil Musicalie{% endblock %}
+
+{% block body %}
+    {% if festivals  |length > 0  %}
+    <h1 class="mb-4 text-center text-muted"> {{ pluralize(festivals |length,'festival','festivals') }}</h1>
+    {% for festival in festivals %}
+    <div>
+        <article>
+            <div>
+                <a href="{{ path('app_festival_show',{id:festival.id}) }}">
+                    {{ festival.name }}
+                </a>
+            </div>
+        </article>
+
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% for departement in departements %}
+        <div>
+            <article>
+                <div>
+                    <a href="{{ path('app_departement_show',{id:departement.id}) }}">
+                        {{ departement.name }}
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    {% endfor %}
+{% endblock %}
